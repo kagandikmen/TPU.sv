@@ -45,51 +45,51 @@ module tb_dist_ram
         
         // test sequence begins
 
-        in_addr = 0;
-        data_in = 0;
-        write_en = 0;
-        out_addr = 0;
+        in_addr <= 0;
+        data_in <= 0;
+        write_en <= 0;
+        out_addr <= 0;
 
-        #20;
+        #19;
 
         // write some data
-        in_addr = 5'h01;
-        data_in = 8'hAB;
-        write_en = 1'b1;
+        write_en <= 1'b1;
+        in_addr <= 5'h01;
+        data_in <= 8'hAB;
         
         #5;
 
         // read the written data
-        out_addr = 5'h01;
+        out_addr <= 5'h01;
 
         // write some data
-        in_addr = 5'h02;
-        data_in = 8'hFE;
+        in_addr <= 5'h02;
+        data_in <= 8'hFE;
 
         #5;
 
         // read the written data
-        out_addr = 5'h02;
+        out_addr <= 5'h02;
 
         // try to write without enabling
-        write_en = 1'b0;
+        write_en <= 1'b0;
         #5;
-        in_addr = 5'h03;
-        data_in = 8'hDE;
+        in_addr <= 5'h03;
+        data_in <= 8'hDE;
         #5;
-        out_addr = 5'h03;
+        out_addr <= 5'h03;
 
         // try to reread previously written data
-        out_addr = 5'h01;
+        out_addr <= 5'h01;
         #5;
-        out_addr = 5'h02;
+        out_addr <= 5'h02;
         #5;
 
         // write and read simultaneously
-        write_en = 1'b1;
-        in_addr = 5'h04;
-        out_addr = 5'h04;
-        data_in = 8'h33;
+        write_en <= 1'b1;
+        in_addr <= 5'h04;
+        out_addr <= 5'h04;
+        data_in <= 8'h33;
 
         // test sequence completed
 
