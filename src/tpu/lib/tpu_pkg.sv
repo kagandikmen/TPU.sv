@@ -1,18 +1,23 @@
 // Common package for RTL description of TPU
 // Created: 2024-09-28
-// Modified: 2024-09-28
+// Modified: 2024-09-29
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
 
 package tpu_pkg;
     parameter int BYTE_WIDTH = 8;
+    parameter int BUFFER_ADDR_WIDTH = 24;
+    parameter int ACCUMULATOR_ADDR_WIDTH = 16;
+    parameter int WEIGHT_ADDR_WIDTH = BUFFER_ADDR_WIDTH + ACCUMULATOR_ADDR_WIDTH;
 
     typedef logic [7:0] byte_type;
     typedef logic [16:0] halfword_type;
     typedef logic [31:0] word_type;
 
-    typedef logic [23:0] buffer_addr_type;
+    typedef logic [BUFFER_ADDR_WIDTH-1:0] buffer_addr_type;
+    typedef logic [ACCUMULATOR_ADDR_WIDTH-1:0] accumulator_addr_type;
+    typedef logic [WEIGHT_ADDR_WIDTH-1:0] weight_addr_type;
 
     typedef struct packed   // instr_type
     {
