@@ -6,7 +6,7 @@ This is an attempt of mine to rebuild Google's TPU (Tensor Processing Unit) in S
 
 These are the main sources I utilize:
 
-- [Google's 2018 paper introducing TPU's architecture](https://arxiv.org/abs/2304.01433)
+- [Google's 2018 paper introducing TPU's architecture](https://arxiv.org/abs/1704.04760)
 - ["Implementierung einer Tensor Processing Unit" by Jonas Fuhrmann](https://reposit.haw-hamburg.de/handle/20.500.12738/8527)
 - [tinyTPU by Jonas Fuhrmann](https://github.com/jofrfu/tinyTPU/)
 
