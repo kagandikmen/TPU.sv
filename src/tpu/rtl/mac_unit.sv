@@ -1,6 +1,6 @@
 // Multiply-accumulate unit
 // Created: 2024-09-30
-// Modified: 2024-10-01
+// Modified: 2024-10-02
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
@@ -25,7 +25,7 @@ module mac_unit
         input   extended_byte_type data_in,
         input   logic [LAST_SUM_WIDTH-1:0] last_sum,
 
-        output  logic [PARTIAL_SUM_WIDTH-1:0] partial_sum
+        output  logic signed [PARTIAL_SUM_WIDTH-1:0] partial_sum
     );
 
     extended_byte_type preweight_cs = 0;
@@ -49,7 +49,7 @@ module mac_unit
         data_in_ns      = data_in;
         preweight_ns    = weight_in;
         weight_ns       = preweight_cs;
-        pipeline_ns     = data_in_cs * weight_cs;
+        pipeline_ns     = $signed(data_in_cs) * $signed(weight_cs);
     end
 
     // output logic
@@ -57,12 +57,12 @@ module mac_unit
         if((LAST_SUM_WIDTH > 0) && (LAST_SUM_WIDTH < PARTIAL_SUM_WIDTH))
         begin
             always_comb
-                partial_sum_ns  = pipeline_cs + last_sum;
+                partial_sum_ns  = $signed(pipeline_cs) + $signed(last_sum);
         end
         else if((LAST_SUM_WIDTH > 0) && (LAST_SUM_WIDTH == PARTIAL_SUM_WIDTH))
         begin
             always_comb
-                partial_sum_ns  = pipeline_cs + last_sum;
+                partial_sum_ns  = $signed(pipeline_cs) + $signed(last_sum);
         end  
         else
         begin
