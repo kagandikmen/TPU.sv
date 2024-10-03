@@ -1,6 +1,6 @@
 // Common package for RTL description of TPU
 // Created: 2024-09-28
-// Modified: 2024-10-02
+// Modified: 2024-10-03
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
@@ -14,7 +14,7 @@ package tpu_pkg;
     parameter int ACCUMULATOR_ADDR_WIDTH = 16;
     parameter int WEIGHT_ADDR_WIDTH = BUFFER_ADDR_WIDTH + ACCUMULATOR_ADDR_WIDTH;
 
-    typedef enum bit {false, true} boolean;     // default value is false
+    typedef enum bit {false=0, true=1} boolean;     // default value is false
 
     typedef logic [BYTE_WIDTH-1:0] byte_type;
     typedef logic [EXTENDED_BYTE_WIDTH-1:0] extended_byte_type;
@@ -25,6 +25,8 @@ package tpu_pkg;
     typedef logic [BUFFER_ADDR_WIDTH-1:0] buffer_addr_type;
     typedef logic [ACCUMULATOR_ADDR_WIDTH-1:0] accumulator_addr_type;
     typedef logic [WEIGHT_ADDR_WIDTH-1:0] weight_addr_type;
+
+    typedef enum logic[3:0] {no_activation, relu, relu6, crelu, elu, selu, softplus, softsign, dropout, sigmoid, tanh} activation_type;
 
     typedef struct packed   // instr_type
     {

@@ -1,6 +1,6 @@
 # TPU.sv
 
-This is an attempt of mine to rebuild Google's TPU (Tensor Processing Unit) in SystemVerilog.
+This is an attempt of mine to rebuild Google's TPUv1 (Tensor Processing Unit, version 1) in SystemVerilog.
 
 ## Approach
 
@@ -14,7 +14,7 @@ My current goal is to get to know how tinyTPU was implemented and imitate it for
 
 ## Status
 
-This project is in active development as of 2024-09-28.
+This project is in active development as of 2024-10-03.
 
 ## Contributing
 
