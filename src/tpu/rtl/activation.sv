@@ -1,6 +1,6 @@
 // Activation unit
 // Created: 2024-10-03
-// Modified: 2024-10-03
+// Modified: 2024-10-04
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
@@ -154,25 +154,25 @@ module activation
     begin
         if(rst)
         begin
-            output_reg_cs               = '{default: 0};
-            input_reg_cs                = '{default: 0};
-            input_pipe0_cs              = '{default: 0};
-            relu_round_reg_cs           = '{default: 0};
-            sigmoid_round_reg_cs        = '{default: 0};
-            is_signed_reg_cs            = '{default: 0};
-            activation_function_reg0_cs = no_activation;
-            activation_function_reg1_cs = no_activation;
+            output_reg_cs               <= '{default: 0};
+            input_reg_cs                <= '{default: 0};
+            input_pipe0_cs              <= '{default: 0};
+            relu_round_reg_cs           <= '{default: 0};
+            sigmoid_round_reg_cs        <= '{default: 0};
+            is_signed_reg_cs            <= '{default: 0};
+            activation_function_reg0_cs <= no_activation;
+            activation_function_reg1_cs <= no_activation;
         end
         else if(enable)
         begin
-            output_reg_cs               = output_reg_ns;
-            input_reg_cs                = input_reg_ns;
-            input_pipe0_cs              = input_pipe0_ns;
-            relu_round_reg_cs           = relu_round_reg_ns;
-            sigmoid_round_reg_cs        = sigmoid_round_reg_ns;
-            is_signed_reg_cs            = is_signed_reg_ns;
-            activation_function_reg0_cs = activation_function_reg0_ns;
-            activation_function_reg1_cs = activation_function_reg1_ns;
+            output_reg_cs               <= output_reg_ns;
+            input_reg_cs                <= input_reg_ns;
+            input_pipe0_cs              <= input_pipe0_ns;
+            relu_round_reg_cs           <= relu_round_reg_ns;
+            sigmoid_round_reg_cs        <= sigmoid_round_reg_ns;
+            is_signed_reg_cs            <= is_signed_reg_ns;
+            activation_function_reg0_cs <= activation_function_reg0_ns;
+            activation_function_reg1_cs <= activation_function_reg1_ns;
         end
     end
 
