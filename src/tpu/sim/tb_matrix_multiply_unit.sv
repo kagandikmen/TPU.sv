@@ -236,16 +236,16 @@ module tb_matrix_multiply_unit
             @(posedge clk);
 
             if(result[0] != current_result[i][0])
-                $display("Test 0 failed (real: %0d, ideal: %0d) at time %0t ns", result[0], current_result[i][0], $realtime/1000);
+                $fatal("Test 0 failed (real: %0d, ideal: %0d) at time %0t ns", result[0], current_result[i][0], $realtime/1000);
 
             if(result[1] != current_result[i][1])
-                $display("Test 1 failed (real: %0d, ideal: %0d) at time %0t ns", result[1], current_result[i][1], $realtime/1000);
+                $fatal("Test 1 failed (real: %0d, ideal: %0d) at time %0t ns", result[1], current_result[i][1], $realtime/1000);
 
             if(result[2] != current_result[i][2])
-                $display("Test 2 failed (real: %0d, ideal: %0d) at time %0t ns", result[2], current_result[i][2], $realtime/1000);
+                $fatal("Test 2 failed (real: %0d, ideal: %0d) at time %0t ns", result[2], current_result[i][2], $realtime/1000);
 
             if(result[3] != current_result[i][3])
-                $display("Test 3 failed (real: %0d, ideal: %0d) at time %0t ns", result[3], current_result[i][3], $realtime/1000);
+                $fatal("Test 3 failed (real: %0d, ideal: %0d) at time %0t ns", result[3], current_result[i][3], $realtime/1000);
 
         end
         
