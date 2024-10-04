@@ -1,6 +1,6 @@
 // Common package for RTL description of TPU
 // Created: 2024-09-28
-// Modified: 2024-10-03
+// Modified: 2024-10-04
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
@@ -13,6 +13,7 @@ package tpu_pkg;
     parameter int BUFFER_ADDR_WIDTH = 24;
     parameter int ACCUMULATOR_ADDR_WIDTH = 16;
     parameter int WEIGHT_ADDR_WIDTH = BUFFER_ADDR_WIDTH + ACCUMULATOR_ADDR_WIDTH;
+    parameter int OPCODE_WIDTH = 8;
 
     typedef enum bit {false=0, true=1} boolean;     // default value is false
 
@@ -35,6 +36,8 @@ package tpu_pkg;
         logic [31:0] length;
         logic [7:0] opcode; 
     } instr_type;
+
+    instr_type INIT_INSTR = '{default: 0};
 
     function instr_type bit_to_instr(input logic [79:0] bits);
         instr_type result;
