@@ -70,7 +70,7 @@ module tb_dsp_load_ctr
         if(ctr_val != 0)
             $fatal("Test 1.2 fails");
 
-        // test 2: enable with load
+        // test 2: enable
         @(posedge clk);
         enable <= 1;
         repeat (2) @(posedge clk);
