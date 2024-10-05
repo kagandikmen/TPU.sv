@@ -14,7 +14,7 @@ My current goal is to get to know how tinyTPU was implemented and imitate it for
 
 ## Status
 
-This project is in active development as of 2024-10-03.
+This project is in active development as of 2024-10-05.
 
 ## Contributing
 
