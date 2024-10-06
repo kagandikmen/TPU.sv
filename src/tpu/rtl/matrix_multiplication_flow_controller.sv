@@ -1,4 +1,4 @@
-// Matrix multiply unit controller
+// Matrix multiplication flow controller
 // Created: 2024-10-05
 // Modified: 2024-10-06
 
@@ -12,7 +12,7 @@
 
 import tpu_pkg::*;
 
-module matrix_multiply_unit_controller
+module matrix_multiplication_flow_controller
     #(
         parameter int MATRIX_WIDTH = 14
     )(

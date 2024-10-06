@@ -1,4 +1,4 @@
-// Testbench for matrix multiply unit controller
+// Testbench for matrix multiplication flow controller
 // Created: 2024-10-06
 // Modified: 2024-10-06
 
@@ -6,7 +6,7 @@
 // See LICENSE for details
 
 `include "../lib/tpu_pkg.sv"
-`include "../rtl/matrix_multiply_unit_controller.sv"
+`include "../rtl/matrix_multiplication_flow_controller.sv"
 
 import tpu_pkg::*;
 
@@ -26,7 +26,7 @@ module tb_matrix_multiply_unit_controller
     logic accumulate, acc_enable;
     logic busy, resource_busy;
 
-    matrix_multiply_unit_controller #(
+    matrix_multiplication_flow_controller #(
         .MATRIX_WIDTH(MATRIX_WIDTH)
     ) dut (
         .clk(clk),
