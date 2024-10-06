@@ -30,7 +30,7 @@ package tpu_pkg;
 
     typedef enum logic[3:0] {no_activation, relu, relu6, crelu, elu, selu, softplus, softsign, dropout, sigmoid, tanh} activation_type;
 
-    typedef struct packed   // instr_type
+    typedef struct packed
     {
         buffer_addr_type buffer_addr;
         logic [15:0] acc_addr;
@@ -39,6 +39,15 @@ package tpu_pkg;
     } instr_type;
 
     instr_type INIT_INSTR = '{default: 0};
+
+    typedef struct packed
+    {
+        weight_addr_type weight_addr;
+        logic [31:0] length;
+        logic [7:0] opcode; 
+    } weight_instr_type;
+
+    weight_instr_type INIT_WEIGHT_INSTR = '{default: 0};
 
     function instr_type bit_to_instr(input logic [79:0] bits);
         instr_type result;
