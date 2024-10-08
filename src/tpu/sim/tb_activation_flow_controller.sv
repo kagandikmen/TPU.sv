@@ -1,4 +1,4 @@
-// Activation flow controller
+// Testbench for activation flow controller
 // Created: 2024-10-06
 // Modified: 2024-10-06
 
