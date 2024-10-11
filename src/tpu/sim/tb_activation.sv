@@ -1,6 +1,6 @@
 // Testbench for activation unit
 // Created: 2024-10-03
-// Modified: 2024-10-03
+// Modified: 2024-10-11
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
@@ -22,7 +22,8 @@ module tb_activation
     logic clk, rst, enable;
     activation_type activation_function;
     logic is_signed;
-    word_type [MATRIX_WIDTH-1:0] data_in, data_out;
+    word_type [MATRIX_WIDTH-1:0] data_in;
+    byte_type [MATRIX_WIDTH-1:0] data_out;
 
     logic signed [7:0] byte_reg0_signed, byte_reg1_signed;
     logic signed [15:0] halfword_reg0_signed, halfword_reg1_signed;

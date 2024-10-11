@@ -1,6 +1,6 @@
 // Unified buffer
 // Created: 2024-09-28
-// Modified: 2024-09-28
+// Modified: 2024-10-11
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
@@ -114,7 +114,7 @@ module unified_buffer
                 begin
                     ram[addr1_override] <= write_port1_bits;
                 end
-                master_read_port_bits <= ram[addr1_override];
+                master_read_port_bits <= write_en1 ? write_port1_bits : ram[addr1_override];
             // synthesis translate_off
             end
             // synthesis translate_on
@@ -141,29 +141,27 @@ module unified_buffer
     end
 
     // output logic
-    always_comb
-    begin
-        write_port1_bits = write_port1;
-        master_write_port_bits = master_write_port;
 
-        read_port0_reg0_ns = read_port0_bits;
-        read_port0_reg1_ns = read_port0_reg0_cs;
-        read_port0 = read_port0_reg1_cs;
+    assign write_port1_bits = write_port1;
+    assign master_write_port_bits = master_write_port;
 
-        master_read_port_reg0_ns = master_read_port_bits;
-        master_read_port_reg1_ns = master_read_port_reg0_cs;
-        master_read_port = master_read_port_reg1_cs;
-    end
+    assign read_port0_reg0_ns = read_port0_bits;
+    assign read_port0_reg1_ns = read_port0_reg0_cs;
+    assign read_port0 = read_port0_reg1_cs;
+
+    assign master_read_port_reg0_ns = master_read_port_bits;
+    assign master_read_port_reg1_ns = master_read_port_reg0_cs;
+    assign master_read_port = master_read_port_reg1_cs;
 
     // next state logic
     always_ff @(posedge clk)
     begin        
         if(rst)
         begin
-            read_port0_reg0_cs <= 0;
-            read_port0_reg1_cs <= 0;
-            master_read_port_reg0_cs <= 0;
-            master_read_port_reg1_cs <= 0;
+            read_port0_reg0_cs <= '{default: 0};
+            read_port0_reg1_cs <= '{default: 0};
+            master_read_port_reg0_cs <= '{default: 0};
+            master_read_port_reg1_cs <= '{default: 0};
         end
         else
         begin
