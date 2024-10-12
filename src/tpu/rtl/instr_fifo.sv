@@ -1,11 +1,12 @@
 // Instruction FIFO
 // Created: 2024-09-27
-// Modified: 2024-09-28
+// Modified: 2024-10-12
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
 
 `include "../lib/tpu_pkg.sv"
+`include "fifo.sv"
 
 import tpu_pkg::*;
 

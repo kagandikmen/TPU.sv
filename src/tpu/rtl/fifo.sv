@@ -1,9 +1,11 @@
 // FIFO unit
 // Created: 2024-09-27
-// Modified: 2024-09-27
+// Modified: 2024-10-12
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
+
+`include "dist_ram.sv"
 
 module fifo
     #(
@@ -92,7 +94,7 @@ module fifo
             end
         end
 
-        if(write_en & (write_ptr_cs != read_ptr_cs | !looped_cs))
+        if(write_en & (write_ptr_cs != read_ptr_ns | !looped_cs))
         begin
             if(write_ptr_cs == FIFO_DEPTH-1)
             begin
@@ -105,7 +107,7 @@ module fifo
             end
         end
 
-        if(write_ptr_cs == read_ptr_cs)
+        if(write_ptr_ns == read_ptr_ns)
         begin
             if(looped_cs)
             begin

@@ -1,6 +1,6 @@
 // Weight flow controller
 // Created: 2024-10-06
-// Modified: 2024-10-06
+// Modified: 2024-10-12
 
 // Copyright (c) 2024 Kagan Dikmen
 // See LICENSE for details
@@ -171,15 +171,18 @@ module weight_flow_controller
         else
             weight_addr_ns = $unsigned(weight_addr_cs) + 1;
     end
+    
+    // synthesis translate_off
+    always_ff @(posedge clk)
+    begin
+        if(instr_enable && running_cs)
+            $warning("New instruction beeing feeden while still processing at time %0t", $realtime);
+    end
+    // synthesis translate_on
 
     // control signals
     always_comb
     begin
-        // synthesis translate_off
-        if(instr_enable && running_cs)
-            $warning("New instruction beeing feeden while still processing");
-        // synthesis translate_on
-
         if(!running_cs)
         begin
             if(instr_enable)

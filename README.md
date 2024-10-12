@@ -1,24 +1,29 @@
 # TPU.sv
 
-This is an attempt of mine to rebuild Google's TPUv1 (Tensor Processing Unit, version 1) in SystemVerilog.
+TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary objective of this project is to develop a generic and resource-adjustable machine learning inference accelerator for educational purposes.
 
 ## Approach
 
-These are the main sources I utilize:
+The following sources have been primarily referenced for this project:
 
 - [Google's 2018 paper introducing TPU's architecture](https://arxiv.org/abs/1704.04760)
 - ["Implementierung einer Tensor Processing Unit" by Jonas Fuhrmann](https://reposit.haw-hamburg.de/handle/20.500.12738/8527)
 - [tinyTPU by Jonas Fuhrmann](https://github.com/jofrfu/tinyTPU/)
 
-My current goal is to get to know how tinyTPU was implemented and imitate it for the time being. Once I am comfortable with the architecture I will begin to apply my own changes further modifying/improving it.
-
 ## Status
 
-This project is in active development as of 2024-10-11.
+The core has been completed and successfully passes simulations as of 2024-10-12.
+
+### Next Steps
+
+- Integration of an AXI module for communication
+- Evaluation on real hardware with actual machine learning workloads
+- Refinement of the hardware description
+- Enhancement of the documentation
 
 ## Contributing
 
-Contributions of all kinds are welcome.
+Contributions of any kind are welcome. If you encounter a bug, please do not hesitate to create an issue.
 
 ## License
 
