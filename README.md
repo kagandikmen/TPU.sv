@@ -2,6 +2,10 @@
 
 TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary objective of this project is to develop a generic and resource-adjustable machine learning inference accelerator for educational purposes.
 
+## Architecture
+
+![architecture_diagram](doc/tpusv.png.png)
+
 ## Approach
 
 The following sources have been primarily referenced for this project:
