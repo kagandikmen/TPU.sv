@@ -4,7 +4,7 @@ TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary ob
 
 ## Architecture
 
-![architecture_diagram](doc/tpusv.png.png)
+![architecture_diagram](doc/tpusv.png)
 
 ## Approach
 
