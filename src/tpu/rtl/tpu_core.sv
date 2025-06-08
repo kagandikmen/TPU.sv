@@ -1,8 +1,8 @@
 // TPU's core
-// Created: 2024-10-08
-// Modified: 2024-10-11
+// Created:     2024-10-08
+// Modified:    2025-06-08
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
 `include "../lib/tpu_pkg.sv"
@@ -123,7 +123,7 @@ module tpu_core
         .addr0                          (weight_addr0),                 // input from weight_flow_controller
         .en0                            (weight_en0),                   // input from weight_flow_controller
         .write_en0                      (0),                            // input
-        .write_port0                    ('{default: 0}),                // input
+        .write_port0                    ('b0),                          // input
         .read_port0                     (weight_read_port0),            // output to matrix_multiply_unit
         .addr1                          (weight_addr),                  // input from tpu_core
         .en1                            (weight_enable),                // input from tpu_core

@@ -1,8 +1,8 @@
 // Dsp load counter
-// Created: 2024-10-05
-// Modified: 2024-10-05
+// Created:     2024-10-05
+// Modified:    2025-06-08
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
 `include "../lib/tpu_pkg.sv"
@@ -39,7 +39,7 @@ module dsp_load_ctr
     // pipeline
     assign load_ns = load;
     
-    assign input_pipe_ns = load ? start_val : '{0: 1, default: 0};
+    assign input_pipe_ns = load ? start_val : {{COUNTER_WIDTH-1{1'b0}}, 1'b1};
     assign ctr_input_ns = input_pipe_cs;
 
     assign ctr_ns = $unsigned(ctr_cs) + $unsigned(ctr_input_cs);
