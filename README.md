@@ -12,7 +12,7 @@
 
 TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary objective of this project is to develop a generic and resource-adjustable machine learning inference accelerator for educational purposes.
 
-![GitHub last commit](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv/dev) ![GitHub License](https://img.shields.io/github/license/kagandikmen/TPU.sv)
+![GitHub last commit](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv?label=latest%20commit%20to%20master) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv/dev?label=latest%20commit%20to%20dev) ![GitHub License](https://img.shields.io/github/license/kagandikmen/TPU.sv)
 
 ## Project Structure
 
