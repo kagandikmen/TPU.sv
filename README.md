@@ -23,7 +23,17 @@ TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary ob
 
 ## Architectural Overview
 
-![Architectural Overview](docs/architectural_overview.svg)
+<picture>
+  <source
+    srcset="docs/architectural_overview_dark.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="docs/architectural_overview_light.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="docs/architectural_overview_light.svg" alt="TPU.sv Architectural Overview" />
+</picture>
 
 ## Credits
 
