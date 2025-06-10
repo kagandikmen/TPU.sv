@@ -4,7 +4,7 @@ TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary ob
 
 ## Project Structure
 
-- `doc` - Project documentation and images
+- `docs` - Project documentation and images
 - `src/tpu/lib` - Libraries for common parameters, functions, tasks, etc.
 - `src/tpu/rtl` - RTL description of TPU.sv
 - `src/tpu/sim` - Testbenches
@@ -13,14 +13,14 @@ TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary ob
 
 <picture>
   <source
-    srcset="doc/architecture_dark.png"
+    srcset="docs/architecture_dark.png"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="doc/architecture_light.png"
+    srcset="docs/architecture_light.png"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="doc/architecture_light.png" alt="Architecture Diagram" />
+  <img src="docs/architecture_light.png" alt="Architecture Diagram" />
 </picture>
 
 ## Credits
