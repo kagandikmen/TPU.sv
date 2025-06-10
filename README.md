@@ -9,19 +9,9 @@ TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary ob
 - `src/tpu/rtl` - RTL description of TPU.sv
 - `src/tpu/sim` - Testbenches
 
-## Architectural Details
+## Architectural Overview
 
-<picture>
-  <source
-    srcset="docs/architecture_dark.png"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="docs/architecture_light.png"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src="docs/architecture_light.png" alt="Architecture Diagram" />
-</picture>
+![Architectural Overview](docs/architectural_overview.svg)
 
 ## Credits
 
@@ -47,6 +37,6 @@ Contributions of any kind are welcome. If you encounter a bug, please do not hes
 
 ## License
 
-MIT License
+TPU.sv is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
