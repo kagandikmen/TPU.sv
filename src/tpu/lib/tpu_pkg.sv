@@ -1,8 +1,8 @@
 // Common package for RTL description of TPU
-// Created: 2024-09-28
-// Modified: 2024-10-06
+// Created:     2024-09-28
+// Modified:    2025-06-10
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
 package tpu_pkg;
@@ -21,7 +21,7 @@ package tpu_pkg;
     typedef logic [BYTE_WIDTH-1:0] byte_type;
     typedef logic [EXTENDED_BYTE_WIDTH-1:0] extended_byte_type;
     typedef logic [2*EXTENDED_BYTE_WIDTH-1:0] mul_halfword_type;
-    typedef logic [16:0] halfword_type;
+    typedef logic [15:0] halfword_type;
     typedef logic [31:0] word_type;
 
     typedef logic [BUFFER_ADDR_WIDTH-1:0] buffer_addr_type;
@@ -29,6 +29,8 @@ package tpu_pkg;
     typedef logic [WEIGHT_ADDR_WIDTH-1:0] weight_addr_type;
 
     typedef enum logic[3:0] {no_activation, relu, relu6, crelu, elu, selu, softplus, softsign, dropout, sigmoid, tanh} activation_type;
+
+    typedef enum logic [2:0] {idle, write_addr, write_data, write_resp, read_addr, read_data, read_resp} fsm_state_type;
 
     typedef struct packed
     {
