@@ -1,8 +1,8 @@
 // Activation flow controller
-// Created: 2024-10-06
-// Modified: 2024-10-06
+// Created:     2024-10-06
+// Modified:    2025-06-08
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
 `include "../lib/tpu_pkg.sv"
@@ -143,8 +143,8 @@ module activation_flow_controller
         .ctr_val(act_to_buf_addr_ns)
     );
 
-    assign is_signed_ns             = instr.opcode[4];
-    assign activation_function_ns   = instr.opcode[3:0];
+    assign is_signed_ns                 = instr.opcode[4];
+    assign activation_function_ns[3:0]  = instr.opcode[3:0];
 
     assign activation_delay_ns[0]   = (activation_function_cs == no_activation) ? no_activation : activation_pipe2_cs;
     assign is_signed_delay_ns[0]    = (is_signed_cs == 0) ? 0 : signed_delay_cs[2];
