@@ -1,6 +1,6 @@
 // Matrix multiply unit
 // Created:     2024-10-01
-// Modified:    2025-06-15
+// Modified:    2025-06-16
 
 // Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
@@ -31,7 +31,7 @@ module matrix_multiply_unit
         output  word_type [MATRIX_WIDTH-1:0] result
     );
 
-    word_type [MATRIX_WIDTH-1:0] interim_result [MATRIX_WIDTH-1:0] = '{default: 0};
+    word_type [MATRIX_WIDTH-1:0] interim_result [MATRIX_WIDTH-1:0];
 
     logic [MATRIX_WIDTH-1:0] load_weight_map;
 
@@ -93,7 +93,7 @@ module matrix_multiply_unit
                 if(i==0)
                 begin
                     mac_unit #(
-                        .LAST_SUM_WIDTH(0),
+                        .LAST_SUM_WIDTH(2),
                         .PARTIAL_SUM_WIDTH(2*EXTENDED_BYTE_WIDTH)
                     ) mac_firstcolumn (
                         .clk(clk),
