@@ -1,23 +1,13 @@
 // TPU's core
 // Created:     2024-10-08
-// Modified:    2025-06-08
+// Modified:    2025-06-15
 
 // Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
-`include "../lib/tpu_pkg.sv"
-
-`include "weight_buffer.sv"
-`include "unified_buffer.sv"
-`include "systolic_data_setup_unit.sv"
-`include "matrix_multiply_unit.sv"
-`include "register_file.sv"
-`include "activation.sv"
-`include "weight_flow_controller.sv"
-`include "matrix_multiplication_flow_controller.sv"
-`include "activation_flow_controller.sv"
-`include "look_ahead_buffer.sv"
-`include "control_coordinator.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 

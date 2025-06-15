@@ -1,13 +1,13 @@
 // Weight flow controller
-// Created: 2024-10-06
-// Modified: 2024-10-12
+// Created:     2024-10-06
+// Modified:    2025-06-15
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
-`include "../lib/tpu_pkg.sv"
-`include "dsp_ctr.sv"
-`include "dsp_load_ctr.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 

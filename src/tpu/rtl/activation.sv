@@ -1,11 +1,13 @@
 // Activation unit
-// Created: 2024-10-03
-// Modified: 2024-10-11
+// Created:     2024-10-03
+// Modified:    2025-06-15
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
+`ifdef TEROSHDL
 `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 

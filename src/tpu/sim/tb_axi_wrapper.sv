@@ -1,14 +1,15 @@
 // Testbench for AXI wrapper module
 // Created:     2025-06-09
-// Modified:    2025-06-10
+// Modified:    2025-06-15
 
 // Copyright (c) 2025 Kagan Dikmen
 // See LICENSE for details
 
 `timescale 1ns/1ps
 
-`include "../lib/tpu_pkg.sv"
-`include "../rtl/axi_wrapper.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 

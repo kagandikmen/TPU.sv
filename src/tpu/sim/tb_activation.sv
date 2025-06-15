@@ -1,14 +1,15 @@
 // Testbench for activation unit
-// Created: 2024-10-03
-// Modified: 2024-10-11
+// Created:     2024-10-03
+// Modified:    2025-06-15
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
 `timescale 1ns/1ps
 
-`include "../lib/tpu_pkg.sv"
-`include "../rtl/activation.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 

@@ -1,11 +1,15 @@
 // AXI wrapper module of TPU.sv
 // Created:     2025-06-08
-// Modified:    2025-06-10
+// Modified:    2025-06-15
 
 // Copyright (c) 2025 Kagan Dikmen
 // See LICENSE for details
 
-`include "./tpu.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
+
+import tpu_pkg::*;
 
 module axi_wrapper
     #(

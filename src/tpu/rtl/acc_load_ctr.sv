@@ -1,11 +1,13 @@
 // Accumulate load counter
 // Created:     2024-10-05
-// Modified:    2025-06-08
+// Modified:    2025-06-15
 
 // Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
-`include "../lib/tpu_pkg.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 
