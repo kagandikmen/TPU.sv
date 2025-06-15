@@ -6,7 +6,7 @@
 // See LICENSE for details
 
 `ifdef TEROSHDL
-`include "../lib/tpu_pkg.sv"
+    `include "../lib/tpu_pkg.sv"
 `endif
 
 import tpu_pkg::*;
@@ -140,7 +140,9 @@ module activation
             no_activation:  output_reg_ns = input_pipe0_cs;
             default:        
             begin
+                // synthesis translate_off
                 $error("Unknown activation function");
+                // synthesis translate_on
                 output_reg_ns = input_pipe0_cs;
             end
         endcase
