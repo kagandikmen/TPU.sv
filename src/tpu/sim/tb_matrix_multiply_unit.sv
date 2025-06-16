@@ -1,14 +1,15 @@
 // Testbench for matrix multiply unit
-// Created: 2024-10-01
-// Modified: 2024-10-02
+// Created:     2024-10-01
+// Modified:    2025-06-15
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
 `timescale 1ns/1ps
 
-`include "../lib/tpu_pkg.sv"
-`include "../rtl/matrix_multiply_unit.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 

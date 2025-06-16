@@ -10,20 +10,31 @@
   <img src="docs/tpu_sv_lightbanner.png" alt="TPU.sv Banner" />
 </picture>
 
-TPU.sv is a reconstruction of Google's TPU (v1) in SystemVerilog. The primary objective of this project is to develop a generic and resource-adjustable machine learning inference accelerator for educational purposes.
+TPU.sv is a tensor processing unit coded in SystemVerilog based on Google's first-generation TPU. It is a generic and resource-adjustable machine learning inference accelerator for educational purposes. TPU.sv is thought for deployment as a co-processor alongside a general-purpose CPU.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv?label=latest%20commit%20to%20master) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv/dev?label=latest%20commit%20to%20dev) ![GitHub License](https://img.shields.io/github/license/kagandikmen/TPU.sv)
 
 ## Project Structure
 
 - `docs` - Project documentation and images
+- `fpga` - Helper files for FPGA deployment
 - `src/tpu/lib` - Libraries for common parameters, functions, tasks, etc.
 - `src/tpu/rtl` - RTL description of TPU.sv
 - `src/tpu/sim` - Testbenches
 
 ## Architectural Overview
 
-![Architectural Overview](docs/architectural_overview.svg)
+<picture>
+  <source
+    srcset="docs/architectural_overview_dark.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="docs/architectural_overview_light.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="docs/architectural_overview_light.svg" alt="TPU.sv Architectural Overview" />
+</picture>
 
 ## Credits
 
@@ -35,13 +46,14 @@ The following sources have been primarily referenced for this project:
 
 ## Status
 
-The core has been completed and successfully passes simulations as of 2024-10-12. An AXI wrapper is also implemented and tested as of 2025-06-10.
+- ✅ AXI wrapper implemented and tested (2025-06-10)
+- ✅ Core complete and simulation passing (2024-10-12)
 
 ### Next Steps
 
-- Evaluation on real hardware with actual machine learning workloads
-- Refinement of the hardware description
-- Enhancement of the documentation
+- 🚧 Evaluation on real hardware with actual machine learning workloads
+- 🚧 Refinement of the hardware description
+- 🚧 Enhancement of the documentation
 
 ## Contributing
 

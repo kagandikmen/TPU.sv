@@ -1,11 +1,13 @@
 // Weight buffer
-// Created: 2024-09-28
-// Modified: 2024-10-11
+// Created:     2024-09-28
+// Modified:    2025-06-16
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
-`include "../lib/tpu_pkg.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 
@@ -97,11 +99,8 @@ module weight_buffer
             if(addr1 < TILE_WIDTH)
             begin
             // synthesis translate_on
-                for(int i=0; i<MATRIX_WIDTH; i++)
-                begin
-                    if(write_en1)
-                        ram[addr1][i*BYTE_WIDTH +: BYTE_WIDTH] <= write_port1_bits[i*BYTE_WIDTH +: BYTE_WIDTH];
-                end
+                if(write_en1)
+                    ram[addr1] <= write_port1_bits;
                 read_port1_bits <= ram[addr1];
             // synthesis translate_off
             end

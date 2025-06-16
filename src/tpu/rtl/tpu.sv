@@ -1,14 +1,13 @@
 // TPU top module
-// Created: 2024-10-11
-// Modified: 2024-10-12
+// Created:     2024-10-11
+// Modified:    2025-06-15
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
-`include "../lib/tpu_pkg.sv"
-`include "runtime_ctr.sv"
-`include "instr_fifo.sv"
-`include "tpu_core.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 
@@ -45,7 +44,7 @@ module tpu
 
         output  logic synchronize
     );
-    
+
     // instr_fifo signals
     instr_type instr;
     logic empty, full;

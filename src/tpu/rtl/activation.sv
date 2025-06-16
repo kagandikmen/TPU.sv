@@ -1,11 +1,13 @@
 // Activation unit
-// Created: 2024-10-03
-// Modified: 2024-10-11
+// Created:     2024-10-03
+// Modified:    2025-06-15
 
-// Copyright (c) 2024 Kagan Dikmen
+// Copyright (c) 2024-2025 Kagan Dikmen
 // See LICENSE for details
 
-`include "../lib/tpu_pkg.sv"
+`ifdef TEROSHDL
+    `include "../lib/tpu_pkg.sv"
+`endif
 
 import tpu_pkg::*;
 
@@ -138,7 +140,9 @@ module activation
             no_activation:  output_reg_ns = input_pipe0_cs;
             default:        
             begin
+                // synthesis translate_off
                 $error("Unknown activation function");
+                // synthesis translate_on
                 output_reg_ns = input_pipe0_cs;
             end
         endcase
