@@ -1,6 +1,6 @@
 // Testbench for AXI wrapper module
 // Created:     2025-06-09
-// Modified:    2025-06-15
+// Modified:    2025-06-16
 
 // Copyright (c) 2025 Kagan Dikmen
 // See LICENSE for details
@@ -13,12 +13,13 @@
 
 import tpu_pkg::*;
 
-module tb_axi_wrapper
+module tb_tpu_axi_wrapper
     #()();
 
     localparam C_S_AXI_DATA_WIDTH = 32;
     localparam C_S_AXI_ADDR_WIDTH = 20;
 
+    logic synchronize;
     logic clk;
     logic nreset;
     logic [C_S_AXI_ADDR_WIDTH-1:0] s_axi_awaddr;
@@ -43,9 +44,10 @@ module tb_axi_wrapper
 
     instr_type instr;
 
-    axi_wrapper #(.C_S_AXI_DATA_WIDTH(C_S_AXI_DATA_WIDTH), .C_S_AXI_ADDR_WIDTH(C_S_AXI_ADDR_WIDTH))
+    tpu_axi_wrapper #(.C_S_AXI_DATA_WIDTH(C_S_AXI_DATA_WIDTH), .C_S_AXI_ADDR_WIDTH(C_S_AXI_ADDR_WIDTH))
         dut 
         (
+            .synchronize(synchronize),
             .s_axi_aclk(clk),
             .s_axi_aresetn(nreset),
             .s_axi_awaddr(s_axi_awaddr),
