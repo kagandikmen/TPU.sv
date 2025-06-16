@@ -1,6 +1,6 @@
 // AXI wrapper module of TPU.sv
 // Created:     2025-06-08
-// Modified:    2025-06-15
+// Modified:    2025-06-16
 
 // Copyright (c) 2025 Kagan Dikmen
 // See LICENSE for details
@@ -11,7 +11,7 @@
 
 import tpu_pkg::*;
 
-module axi_wrapper
+module tpu_axi_wrapper
     #(
         parameter C_S_AXI_DATA_WIDTH = 32,
         parameter C_S_AXI_ADDR_WIDTH = 20

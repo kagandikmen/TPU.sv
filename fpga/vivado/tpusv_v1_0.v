@@ -1,6 +1,6 @@
-// TPU top AXI wrapper module
+// TPU.sv Vivado top module
 // Created: 	2025-06-15
-// Modified:	2025-06-15
+// Modified:	2025-06-16
 
 // Copyright (c) 2025 Kagan Dikmen
 // See LICENSE for details
@@ -51,10 +51,10 @@
 		input wire  s00_axi_rready
 	);
 // Instantiation of Axi Bus Interface S00_AXI
-	axi_wrapper # ( 
+	tpu_axi_wrapper # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
-	) axi_wrapper_inst (
+	) tpu_axi_wrapper_inst (
 		.synchronize(synchronize),
 		.s_axi_aclk(s00_axi_aclk),
 		.s_axi_aresetn(s00_axi_aresetn),
