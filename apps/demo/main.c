@@ -102,7 +102,7 @@ int main()
 
 // interrupt service routine (sets the value pointed by instance pointer to one)
 void isr(void *vp) {
-    *(int*) vp = 1;
+    *(volatile uint8_t*) vp = 1;
 }
 
 int32_t load_inputs(char *stdinput) {
