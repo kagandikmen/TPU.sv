@@ -16,11 +16,23 @@ TPU.sv is a tensor processing unit coded in SystemVerilog based on Google's firs
 
 ## Project Structure
 
-- `docs` - Project documentation and images
-- `fpga` - Helper files for FPGA deployment
-- `src/tpu/lib` - Libraries for common parameters, functions, tasks, etc.
-- `src/tpu/rtl` - RTL description of TPU.sv
-- `src/tpu/sim` - Testbenches
+- `apps/`  
+  Software applications and demo programs
+
+- `docs/`  
+  Project documentation, specifications, and images
+
+- `fpga/`  
+  Helper files for FPGA deployment
+
+- `hdl/`  
+  Hardware description of TPU.sv
+  - `hdl/lib/` - Libraries for common parameters, functions, tasks, etc.
+  - `hdl/rtl/` - RTL description of TPU.sv
+  - `hdl/sim/` - Testbenches
+
+- `sdk/`  
+  Software development kit for TPU.sv
 
 ## Architectural Overview
 
@@ -46,6 +58,7 @@ The following sources have been primarily referenced for this project:
 
 ## Status
 
+- ✅ SDK implemented (2025-06-19)
 - ✅ AXI wrapper implemented and tested (2025-06-10)
 - ✅ Core complete and simulation passing (2024-10-12)
 
