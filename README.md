@@ -12,7 +12,19 @@
 
 TPU.sv is a tensor processing unit coded in SystemVerilog based on Google's first-generation TPU. It is a generic and resource-adjustable machine learning inference accelerator for educational purposes. TPU.sv is thought for deployment as a co-processor alongside a general-purpose CPU.
 
-![GitHub last commit](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv?label=latest%20commit%20to%20master) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv/dev?label=latest%20commit%20to%20dev) ![GitHub License](https://img.shields.io/github/license/kagandikmen/TPU.sv)
+![GitHub last commit](https://img.shields.io/github/last-commit/kagandikmen/TPU.sv?label=latest%20commit%20to%20master) ![GitHub License](https://img.shields.io/github/license/kagandikmen/TPU.sv)
+
+<picture>
+  <source
+    srcset="docs/architectural_overview_dark.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="docs/architectural_overview_light.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="docs/architectural_overview_light.svg" alt="TPU.sv Architectural Overview" />
+</picture>
 
 ## Project Structure
 
@@ -33,20 +45,6 @@ TPU.sv is a tensor processing unit coded in SystemVerilog based on Google's firs
 
 - `sdk/`  
   Software development kit for TPU.sv
-
-## Architectural Overview
-
-<picture>
-  <source
-    srcset="docs/architectural_overview_dark.svg"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="docs/architectural_overview_light.svg"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src="docs/architectural_overview_light.svg" alt="TPU.sv Architectural Overview" />
-</picture>
 
 ## Credits
 
