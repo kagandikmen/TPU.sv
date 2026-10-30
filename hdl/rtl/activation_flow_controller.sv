@@ -233,43 +233,43 @@ module activation_flow_controller
     begin
         if(rst)
         begin
-            buf_write_en_cs         = 0;
-            running_cs              = 0;
-            running_pipe_cs         = '{default: 0};
-            acc_to_act_addr_cs      = '{default: 0};
-            act_to_buf_addr_cs      = '{default: 0};
-            buf_write_en_delay_cs   = '{default: 0};
-            signed_delay_cs         = '{default: 0};
-            activation_pipe0_cs     = no_activation;
-            activation_pipe1_cs     = no_activation;
-            activation_pipe2_cs     = no_activation;
+            buf_write_en_cs         <= 0;
+            running_cs              <= 0;
+            running_pipe_cs         <= '{default: 0};
+            acc_to_act_addr_cs      <= '{default: 0};
+            act_to_buf_addr_cs      <= '{default: 0};
+            buf_write_en_delay_cs   <= '{default: 0};
+            signed_delay_cs         <= '{default: 0};
+            activation_pipe0_cs     <= no_activation;
+            activation_pipe1_cs     <= no_activation;
+            activation_pipe2_cs     <= no_activation;
 
             // delay register
-            acc_addr_delay_cs       = '{default: 0};
-            activation_delay_cs     = '{default: no_activation};
-            is_signed_delay_cs      = '{default: 0};
-            act_to_buf_delay_cs     = '{default: 0};
-            write_en_delay_cs       = '{default: 0};
+            acc_addr_delay_cs       <= '{default: 0};
+            activation_delay_cs     <= '{default: no_activation};
+            is_signed_delay_cs      <= '{default: 0};
+            act_to_buf_delay_cs     <= '{default: 0};
+            write_en_delay_cs       <= '{default: 0};
         end
         else if(enable)
         begin
-            buf_write_en_cs         = buf_write_en_ns;
-            running_cs              = running_ns;
-            running_pipe_cs         = running_pipe_ns;
-            acc_to_act_addr_cs      = acc_to_act_addr_ns;
-            act_to_buf_addr_cs      = act_to_buf_addr_ns;
-            buf_write_en_delay_cs   = buf_write_en_delay_ns;
-            signed_delay_cs         = signed_delay_ns;
-            activation_pipe0_cs     = activation_pipe0_ns;
-            activation_pipe1_cs     = activation_pipe1_ns;
-            activation_pipe2_cs     = activation_pipe2_ns;
+            buf_write_en_cs         <= buf_write_en_ns;
+            running_cs              <= running_ns;
+            running_pipe_cs         <= running_pipe_ns;
+            acc_to_act_addr_cs      <= acc_to_act_addr_ns;
+            act_to_buf_addr_cs      <= act_to_buf_addr_ns;
+            buf_write_en_delay_cs   <= buf_write_en_delay_ns;
+            signed_delay_cs         <= signed_delay_ns;
+            activation_pipe0_cs     <= activation_pipe0_ns;
+            activation_pipe1_cs     <= activation_pipe1_ns;
+            activation_pipe2_cs     <= activation_pipe2_ns;
 
             // delay register
-            acc_addr_delay_cs       = acc_addr_delay_ns;
-            activation_delay_cs     = activation_delay_ns;
-            is_signed_delay_cs      = is_signed_delay_ns;
-            act_to_buf_delay_cs     = act_to_buf_delay_ns;
-            write_en_delay_cs       = write_en_delay_ns;
+            acc_addr_delay_cs       <= acc_addr_delay_ns;
+            activation_delay_cs     <= activation_delay_ns;
+            is_signed_delay_cs      <= is_signed_delay_ns;
+            act_to_buf_delay_cs     <= act_to_buf_delay_ns;
+            write_en_delay_cs       <= write_en_delay_ns;
         end
 
         if(act_rst)
